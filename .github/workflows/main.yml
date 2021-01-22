@@ -46,3 +46,13 @@ jobs:
           REMOTE_USER: ${{ secrets.REMOTE_USER }}
           # TARGET: ${{ secrets.REMOTE_TARGET }}
           TARGET: "/var/www/test/v2"
+      - name: Execute SSH commands
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.REMOTE_HOST }}
+          username: ${{ secrets.REMOTE_USER }}
+          key: ${{ secrets.SERVER_SSH_KEY }}
+          port: 22
+          script: |
+            cd /var/www/test/v2
+            ls -al
