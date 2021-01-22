@@ -22,6 +22,6 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
+      - run: npm install react-scripts -g
       - run: npm install
-      - run: cd client && npm install
-      - run: react-scripts build
+      - run: cd client && npm install && npm run build
