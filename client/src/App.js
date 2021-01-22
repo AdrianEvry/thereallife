@@ -12,6 +12,7 @@ class App extends Component {
       const response = res.data;
       this.setState({ response });
     });
+    console.log("TEST");
   }
 
   render() {
